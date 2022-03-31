@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Material Design Icon';
+    src: url( './dist/fonts/materialdesignicons-webfont.eot' );
+    src:
+        url('./dist/fonts/materialdesignicons-webfont.eot?#iefix') format( 'embedded-opentype' ),
+        url( './dist/fonts/materialdesignicons-webfont.woff' ) format( 'woff' ),
+        url( './dist/fonts/materialdesignicons-webfont.ttf' ) format( 'truetype' ),
+        url( './dist/fonts/materialdesignicons-webfont.svg' ) format( 'svg' );
+}
