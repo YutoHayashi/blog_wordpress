@@ -1,0 +1,14 @@
+[
+    {
+        "name": "links",
+        "options": {
+            "label": "リンク",
+            "public": true,
+            "has_archive": true,
+            "menu_position": 5,
+            "menu_icon": "dashicons-admin-links",
+            "show_in_rest": true
+        },
+        "editor": false
+    }
+]

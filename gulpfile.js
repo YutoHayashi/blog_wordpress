@@ -23,10 +23,6 @@ gulp.task( 'webpack', (  ) => {
         .pipe( gulp.dest( './dist/js' ) );
 } );
 gulp.task( 'scss', (  ) => {
-    const plugins = [
-        tailwindcss( './tailwind.config.js' ),
-        autoprefixer,
-    ];
     return gulp
         .src( './assets/scss/style.scss' )
         .pipe( sass( {
@@ -34,14 +30,31 @@ gulp.task( 'scss', (  ) => {
         } )
             .on( 'error', sass.logError ) )
         .pipe( gulp.dest( './dist/css' ) )
-        .pipe( postcss( plugins ) )
+        .pipe( postcss( [
+            tailwindcss( './tailwind.config.js' ),
+            autoprefixer,
+        ] ) )
         .pipe( concat( { path: 'style.css' } ) )
         .pipe( gulp.dest( './dist/css' ) );
 } );
-gulp.task( 'subset', cb => {
-    const texts = [  ];
+gulp.task( 'font-css', (  ) => {
     return gulp
         .src( './assets/scss/font.scss' )
+        .pipe( sass( {
+            includePaths: [ 'node_modules' ],
+        } ) )
+            .on( 'error', sass.logError )
+        .pipe( gulp.dest( './dist/css' ) )
+        .pipe( postcss( [
+            autoprefixer,
+        ] ) )
+        .pipe( concat( { path: 'font.css' } ) )
+        .pipe( gulp.dest( './dist/css' ) )
+} );
+gulp.task( 'subset', cb => {
+    const texts = [  ];
+    gulp        
+        .src( './assets/scss/subset.scss' )
         .pipe( css2txt(  ) )
         .on( 'data', file => texts.push( file.contents.toString(  ) ) )
         .on( 'end', (  ) => {
@@ -78,6 +91,7 @@ gulp.task( 'default', gulp.parallel(
     [
         'webpack',
         'subset',
+        'font-css',
         gulp.series( 'scss', 'minify' ),
     ],
     'watch',

@@ -3,40 +3,32 @@ module.exports = {
         './*.php',
         './parts/**/*.php',
     ],
+    safelist: [
+        'h-0',
+    ],
     theme: {
         fontFamily: {
-            ui: [ 'Segoe UI', 'meiryo', 'yu gothic', 'hiragino kaku gothic pron', 'sans-serif', 'mdi' ],
+            ui: [ 'Arial', 'Helvetica', 'sans-serif' ],
+            roboto: [ 'Roboto Slab', 'Roboto Mono', 'monospace', 'Arial', 'Helvetica', 'sans-serif' ],
         },
         extend: {
             fontSize: Object.assign( {
                 base: '62.5%',
-            }, ...Array.from( Array( 40 ) ).map( ( _, i ) => ( { [ i ]: `${ ( i * .1 ).toPrecision( 2 ) }rem` } ) ), ),
-            colors: {
-                transparent: 'transparent',
-                primary: '#F43E71',
-                secondary: '#3D3D3B',
-                youtube: '#FF2905',
-                twitter: '#1C9BF0',
-            },
-            screens: {
-                '3xl': '2528px',
-            },
+            }, ...Array.from( Array( 50 ) ).map( ( _, i ) => ( { [ i ]: `${ ( i * .1 ).toPrecision( 2 ) }rem` } ) ), ),
             maxWidth: {
-                'inner': '1280px',
-                'second-inner': '660px',
-            },
-            height: {
-                banner: '190px',
+                inner: '1300px',
             },
             maxHeight: {
-                'card-s': '240px',
+                'card-img': '270px',
             },
             colors: {
-                transparent: 'transparent',
-                primary: '#F43E71',
-                secondary: '#3D3D3B',
+                white: '#FCFCFC',
+                primary: '#03318C',
                 youtube: '#FF2905',
                 twitter: '#1C9BF0',
+            },
+            zIndex: {
+                'm10': -10,
             },
         },
     },

@@ -1,0 +1,9 @@
+@charset 'utf-8';
+.expandable {
+    ul {
+        @apply transition-all ease-in-out duration-150 h-0 py-0;
+        &.active {
+            @apply h-auto py-8;
+        }
+    }
+}
