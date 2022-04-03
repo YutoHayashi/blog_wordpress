@@ -11,7 +11,7 @@
     <div class="wrapper">
         <?php get_header(  ) ?>
         <main id="main" class="block w-full">
-            <section class="relative w-full bg-slate-100">
+            <section class="relative w-full bg-slate-200">
                 <div id="mv" class="py-24 px-60 w-full max-w-inner mx-auto">
                     <h2 class="text-30 font-bold font-roboto mb-6 text-gray-700 text-center"><?php bloginfo( 'description' ) ?></h2>
                     <small class="inline-block w-full text-18 text-sky-600 text-center font-bold mb-24">
@@ -38,7 +38,7 @@
                     endif; ?>
                 </div>
             </section>
-            <section class="w-full bg-slate-100">
+            <section class="w-full bg-slate-200">
                 <div class="py-16 w-full max-w-inner mx-auto grid grid-cols-3 gap-12">
                     <?php if( have_posts(  ) ):
                         while( have_posts(  ) ): the_post(  );

@@ -1,4 +1,4 @@
-<nav class="w-full bg-white shadow sticky" style="top: 82px">
+<nav class="w-full bg-white shadow sticky z-10" style="top: 82px">
     <ul class="flex justify-center w-full max-w-inner mx-auto overflow-x-auto">
         <?php foreach( get_categories( array( 'hide_empty' => false, ) ) as $category ): ?>
             <li>

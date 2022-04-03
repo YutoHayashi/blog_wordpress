@@ -1,9 +1,9 @@
 <article>
     <a href="<?php echo get_post_permalink(  ) ?>" class="grid grid-cols-3">
-        <div class="bg-gray-300 flex items-center justify-center overflow-hidden">
-            <img src="<?php echo get_the_post_thumbnail_url(  ) ?? '' ?>" alt="サムネイル画像" class="object-cover translation duration-150 transform hover:scale-110" height="100%" width="auto" />
+        <div class="bg-gray-300 flex items-center justify-center overflow-hidden max-h-card-img min-h-card-img">
+            <img src="<?php echo get_the_post_thumbnail_url(  ) ?? '' ?>" alt="サムネイル画像" class="object-cover w-full h-full translation duration-150 transform hover:scale-110" height="100%" width="100%" />
         </div>
-        <div class="col-span-2 flex flex-col justify-center px-24">
+        <div class="col-span-2 flex flex-col justify-center px-24 py-12">
             <p class="mb-3 text-gray-600 font-bold text-14">
                 <?php foreach( get_the_category(  ) as $category ): ?>
                     <span class="mdi mdi-<?php the_field( 'cat_mdi', $category->taxonomy . '_' . $category->term_id ) ?> mdi-24px text-primary ml-5 first:ml-0"></span>

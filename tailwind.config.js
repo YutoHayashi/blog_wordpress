@@ -21,6 +21,9 @@ module.exports = {
             maxHeight: {
                 'card-img': '270px',
             },
+            minHeight: {
+                'card-img': '270px',
+            },
             colors: {
                 white: '#FCFCFC',
                 primary: '#03318C',
