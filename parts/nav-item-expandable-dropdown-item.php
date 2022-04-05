@@ -1,5 +1,5 @@
 <li>
-    <a href="<?php echo $args[ 'url' ] ?>" class="block p-10 bg-white hover:bg-cyan-50 h-full">
+    <a target="_blank" href="<?php echo $args[ 'url' ] ?>" class="block p-10 bg-white hover:bg-cyan-100 h-full">
         <h2 class="font-bold text-18 mb-3">
             <?php if( @$args[ 'icon' ] ): ?>
                 <span class="mdi mdi-<?php echo $args[ 'icon' ] ?> mdi-24px text-primary mr-1"></span>

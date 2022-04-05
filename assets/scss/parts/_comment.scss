@@ -1,0 +1,39 @@
+@charset 'utf-8';
+.comment-reply-link {
+    @apply text-16 text-gray-700 font-bold text-right block w-full;
+}
+.commets-list {
+    .children {
+        @apply inline-block mt-6 md:mt-14 pl-16 md:pl-24 w-full;
+        & > li > figure {
+            @apply relative;
+            &::before, &::after {
+                content: '';
+                --tw-translate-x: -20px;
+                @apply absolute block top-1/2 transform -translate-y-full;
+            }
+            &::before {
+                @apply border-l border-gray-500 w-full h-60;
+            }
+            &::after {
+                @apply border-b border-gray-500 w-4;
+            }
+        }
+    }
+}
+.comment-reply-title {
+    @apply text-16 text-indigo-500 font-bold;
+    a {
+        @apply underline;
+    }
+}
+.comment-form {
+    .form-submit {
+        input[type=submit] {
+            @apply mt-10 py-2 px-8 bg-slate-600 rounded hover:bg-slate-700 text-white text-16 cursor-pointer;
+        }
+    }
+    .comment-form-cookies-consent, .comment-notes {
+        @apply text-14;
+    }
+}

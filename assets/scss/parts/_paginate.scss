@@ -1,0 +1,9 @@
+@charset 'utf-8';
+.page-numbers {
+    @apply flex items-center justify-center rounded-full w-20 h-20 text-14 align-middle text-16 md:hover:bg-gray-200 mx-1;
+
+    &.current {
+        @apply bg-primary text-white;
+    }
+
+}

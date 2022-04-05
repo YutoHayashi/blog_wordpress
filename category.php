@@ -1,3 +1,6 @@
+<?php
+$category = get_category( get_query_var( 'cat' ) );
+?>
 <!DOCTYPE html>
 <html lang="ja" class="text-base">
 <head>
@@ -12,14 +15,12 @@
         <?php get_header(  ) ?>
         <main id="main" class="block w-full">
             <section class="relative w-full bg-white">
-                <div id="mv" class="py-24 px-60 w-full max-w-inner mx-auto">
-                    <h2 class="text-30 font-bold font-roboto mb-6 text-gray-700 text-center"><?php bloginfo( 'description' ) ?></h2>
-                    <p class="inline-block w-full text-18 text-sky-600 text-center font-bold mb-24">
-                        <?php foreach( get_categories( array( 'hide_empty' => false, ) ) as $category ): ?>
-                            <span><?php echo $category->name ?></span>&ensp;/
-                        <?php endforeach ?>
-                    </p>
-                    <?php get_search_form(  ) ?>
+                <div class="py-24 px-60 w-full max-w-inner mx-auto">
+                    <h2 class="text-30 font-bold font-roboto mb-6 text-gray-700 text-center">
+                        <span class="mdi mdi-<?php the_field( 'cat_mdi', $category->taxonomy . '_' . $category->term_id ) ?> text-36"></span>
+                        <?php single_cat_title(  ) ?>
+                    </h2>
+                    <p class="inline-block w-full text-18 text-gray-500 text-center font-bold mb-24"><?php echo nl2br( $category->description ) ?></p>
                 </div>
             </section>
             <?php get_template_part( 'parts/category-nav-header' ) ?>
@@ -28,7 +29,8 @@
                 null,
                 array(
                     'items' => [
-                        [ 'title' => 'トップ', ],
+                        [ 'title' => 'トップ', 'href' => get_option( 'home' ), ],
+                        [ 'title' => $category->name, ],
                     ],
                 ),
             ) ?>
@@ -43,12 +45,24 @@
                         array(
                             'posts_per_page' => 1,
                             'order' => 'DESC',
+                            'tax_query' => array(
+                                'relation' => 'OR',
+                                array(
+                                    'taxonomy' => 'category',
+                                    'field' => 'slug',
+                                    'terms' => array( $category->slug ),
+                                    'include_children' => true,
+                                    'operator' => 'IN',
+                                ),
+                            ),
                         )
                     );
                     if ( $recent_query->have_posts(  ) ):
                         $recent_query->the_post(  );
                         get_template_part( 'parts/card', 'l' );
-                    endif;
+                    else: ?>
+                        <p class="text-16">投稿がありません。</p>
+                    <?php endif;
                     wp_reset_query(  ); ?>
                 </div>
             </section>
@@ -58,6 +72,16 @@
                     array(
                         'paged' => max( 1, get_query_var( 'page' ) ),
                         'offset' => ( max( 1, get_query_var( 'page' ) ) - 1 ) * (int) get_option( 'posts_per_page' ) + 1,
+                        'tax_query' => array(
+                            'relation' => 'OR',
+                            array(
+                                'taxonomy' => 'category',
+                                'field' => 'slug',
+                                'terms' => array( $category->slug ),
+                                'include_children' => true,
+                                'operator' => 'IN',
+                            ),
+                        ),
                     )
                 );
                 ?>

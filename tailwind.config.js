@@ -5,6 +5,8 @@ module.exports = {
     ],
     safelist: [
         'h-0',
+        'border-cyan-300',
+        'border-transparent',
     ],
     theme: {
         fontFamily: {
@@ -17,6 +19,8 @@ module.exports = {
             }, ...Array.from( Array( 50 ) ).map( ( _, i ) => ( { [ i ]: `${ ( i * .1 ).toPrecision( 2 ) }rem` } ) ), ),
             maxWidth: {
                 inner: '1300px',
+                content: '1000px',
+                'content-img': '750px',
             },
             maxHeight: {
                 'card-img': '270px',

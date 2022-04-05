@@ -1,0 +1,37 @@
+@charset 'utf-8';
+.page-content {
+    @apply text-16;
+    > p {
+        @apply mt-12 mb-20;
+    }
+    > h1, > h2, > h3, > h4, > h5, > h6 {
+        @apply block py-2 w-full my-10 font-bold;
+    }
+    > h1 {
+        @apply text-24;
+    }
+    > h2 {
+        @apply pl-8 pr-6 text-20 bg-slate-500 text-white;
+    }
+    > h3 {
+        @apply text-18;
+    }
+    > h4 {
+        @apply text-16;
+    }
+    > h5 {
+        @apply text-14;
+    }
+    > h6 {
+        @apply text-12;
+    }
+    input[type=text], input[type=email], textarea {
+        @apply cursor-pointer border-gray-300 mb-10 text-16;
+    }
+    input[type=submit] {
+        @apply cursor-pointer inline-block rounded text-white bg-slate-600 hover:bg-slate-700 py-2 px-8 text-16;
+    }
+    textarea {
+        @apply w-full;
+    }
+}

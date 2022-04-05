@@ -22,7 +22,7 @@ $nav_options = [
         'href'          => '/contact',
     ],
     [
-        'title'         => 'リンク',
+        'title'         => 'アカウント',
         'expandable'    => true,
         'dropdown'      => array_map(
             function( $post ) {
@@ -35,6 +35,10 @@ $nav_options = [
             },
             ( new WP_Query( array( 'post_type' => 'links', ) ) )->get_posts(  ),
         )
-    ]
+    ],
+    [
+        'title'         => 'プライバシーポリシー',
+        'href'          => '/privacy',
+    ],
 ];
 wp_reset_query(  );

@@ -1,4 +1,4 @@
-<article>
+<article role="article" <?php if( $index = @$args[ 'index' ] ): ?>aria-posinset="<?php echo $index ?>"<?php endif ?>>
     <a href="<?php echo get_post_permalink(  ) ?>" class="grid grid-cols-3">
         <div class="bg-gray-300 flex items-center justify-center overflow-hidden max-h-card-img min-h-card-img">
             <img src="<?php echo get_the_post_thumbnail_url(  ) ?? '' ?>" alt="サムネイル画像" class="object-cover w-full h-full translation duration-150 transform hover:scale-110" height="100%" width="100%" />
