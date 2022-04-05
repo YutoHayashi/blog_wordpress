@@ -12,8 +12,8 @@
         <?php get_header(  ) ?>
         <main id="main" class="block w-full">
             <section class="relative w-full bg-white">
-                <div class="py-24 px-60 w-full max-w-inner mx-auto">
-                    <h2 class="text-30 font-bold font-roboto mb-6 text-gray-700 text-center"><?php the_title(  ) ?></h2>
+                <div class="py-16 md:py-24 px-8 md:px-60 w-full max-w-inner mx-auto">
+                    <h2 class="text-24 md:text-30 font-bold font-roboto mb-6 text-gray-700 text-center"><?php the_title(  ) ?></h2>
                 </div>
             </section>
             <?php get_template_part(
@@ -26,7 +26,7 @@
                     ],
                 ),
             ) ?>
-            <section class="w-full bg-white py-24">
+            <section class="w-full bg-white py-16 md:py-24 px-4 md:px-0">
                 <div class="w-full max-w-content mx-auto page-content">
                     <?php the_content(  ) ?>
                 </div>

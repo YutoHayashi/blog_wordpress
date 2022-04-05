@@ -6,7 +6,7 @@
                 <?php echo get_bloginfo( 'name' ) ?>
             </a>
         </h1>
-        <nav id="nav">
+        <nav id="nav" class="absolute md:relative hidden md:block">
             <ul class="flex items-center">
                 <?php foreach( $nav_options as $nav_option ):
                     get_template_part(

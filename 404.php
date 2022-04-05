@@ -12,8 +12,8 @@
         <?php get_header(  ) ?>
         <main id="main" class="block w-full">
             <section class="relative w-full bg-white">
-                <div class="py-24 px-60 w-full max-w-inner mx-auto">
-                    <h2 class="text-30 font-bold font-roboto mb-6 text-gray-700 text-center">404 | NotFound</h2>
+                <div class="py-16 md:py-24 px-8 md:px-60 w-full max-w-inner mx-auto">
+                    <h2 class="text-24 md:text-30 font-bold font-roboto mb-6 text-gray-700 text-center">404 | NotFound</h2>
                     <p class="inline-block w-full text-18 text-gray-500 text-center font-bold mb-24">申し訳ございませんが、お探しのページは見つかりませんでした。</p>
                     <a href="<?php echo get_option( 'home' ) ?>" class="relative inline-block left-1/2 transform -translate-x-1/2 bg-primary hover:bg-white text-white hover:text-primary border border-primary rounded-full py-3 px-12 text-18 mb-12">トップへ戻る</a>
                     <?php get_search_form(  ) ?>

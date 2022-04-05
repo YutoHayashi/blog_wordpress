@@ -12,8 +12,8 @@
         <?php get_header(  ) ?>
         <main id="main" class="block w-full">
             <section class="relative w-full bg-white">
-                <div id="mv" class="py-24 px-60 w-full max-w-inner mx-auto">
-                    <h2 class="text-30 font-bold font-roboto mb-6 text-gray-700 text-center"><?php bloginfo( 'description' ) ?></h2>
+                <div id="mv" class="py-16 md:py-24 px-8 md:px-60 w-full max-w-inner mx-auto">
+                    <h2 class="text-24 md:text-30 font-bold font-roboto mb-6 text-gray-700 text-center"><?php bloginfo( 'description' ) ?></h2>
                     <p class="inline-block w-full text-18 text-sky-600 text-center font-bold mb-24">
                         <?php foreach( get_categories( array( 'hide_empty' => false, ) ) as $category ): ?>
                             <span><?php echo $category->name ?></span>&ensp;/
@@ -32,7 +32,7 @@
                     ],
                 ),
             ) ?>
-            <section class="w-full bg-white py-24">
+            <section class="w-full bg-white py-16 md:py-24">
                 <div class="w-full max-w-inner mx-auto px-6">
                     <h2 class="text-20 font-bold mb-4 text-gray-700">
                         <span class="mdi mdi-sort-clock-descending-outline"></span>
@@ -52,7 +52,7 @@
                     wp_reset_query(  ); ?>
                 </div>
             </section>
-            <section class="w-full bg-white py-24">
+            <section class="w-full bg-white py-16 md:py-24">
                 <?php
                 $main_query = new WP_Query(
                     array(
@@ -61,7 +61,7 @@
                     )
                 );
                 ?>
-                <div class="w-full max-w-inner mx-auto grid grid-cols-3 gap-16 px-6" aria-setsize="<?php echo $main_query->post_count ?>">
+                <div class="w-full max-w-inner mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 px-6" aria-setsize="<?php echo $main_query->post_count ?>">
                     <?php
                     $index = 1;
                     if ( $main_query->have_posts(  ) ):

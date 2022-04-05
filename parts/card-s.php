@@ -1,7 +1,7 @@
 <article role="article" <?php if( $index = @$args[ 'index' ] ): ?>aria-posinset="<?php echo $index ?>"<?php endif ?>>
     <a href="<?php echo get_post_permalink(  ) ?>" class="block">
         <div class="relative bg-gray-300 overflow-hidden w-full max-h-card-img min-h-card-img">
-            <img src="<?php echo get_the_post_thumbnail_url(  ) ?? '' ?>" alt="サムネイル画像" class="absolute w-full h-full object-cover translation duration-150 transform hover:scale-110" />
+            <img src="<?php echo get_the_post_thumbnail_url(  ) ?? '' ?>" alt="サムネイル画像" class="absolute w-full h-full object-cover translation duration-150 transform md:hover:scale-110" />
         </div>
         <div class="py-4">
             <p class="mb-3 text-gray-600 font-bold text-14">

@@ -15,8 +15,8 @@ $category = get_category( get_query_var( 'cat' ) );
         <?php get_header(  ) ?>
         <main id="main" class="block w-full">
             <section class="relative w-full bg-white">
-                <div class="py-24 px-60 w-full max-w-inner mx-auto">
-                    <h2 class="text-30 font-bold font-roboto mb-6 text-gray-700 text-center">
+                <div class="py-16 md:py-24 px-8 md:px-60 w-full max-w-inner mx-auto">
+                    <h2 class="text-24 md:text-30 font-bold font-roboto mb-6 text-gray-700 text-center">
                         <span class="mdi mdi-<?php the_field( 'cat_mdi', $category->taxonomy . '_' . $category->term_id ) ?> text-36"></span>
                         <?php single_cat_title(  ) ?>
                     </h2>
@@ -34,7 +34,7 @@ $category = get_category( get_query_var( 'cat' ) );
                     ],
                 ),
             ) ?>
-            <section class="w-full bg-white py-24">
+            <section class="w-full bg-white py-16 md:py-24">
                 <div class="w-full max-w-inner mx-auto px-6">
                     <h2 class="text-20 font-bold mb-4 text-gray-700">
                         <span class="mdi mdi-sort-clock-descending-outline"></span>
@@ -66,7 +66,7 @@ $category = get_category( get_query_var( 'cat' ) );
                     wp_reset_query(  ); ?>
                 </div>
             </section>
-            <section class="w-full bg-white py-24">
+            <section class="w-full bg-white py-16 md:py-24">
                 <?php
                 $main_query = new WP_Query(
                     array(
@@ -85,7 +85,7 @@ $category = get_category( get_query_var( 'cat' ) );
                     )
                 );
                 ?>
-                <div class="w-full max-w-inner mx-auto grid grid-cols-3 gap-16 px-6" aria-setsize="<?php echo $main_query->post_count ?>">
+                <div class="w-full max-w-inner mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 px-6" aria-setsize="<?php echo $main_query->post_count ?>">
                     <?php
                     $index = 1;
                     if ( $main_query->have_posts(  ) ):
